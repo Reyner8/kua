@@ -7,18 +7,17 @@ class Page extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_admin');
+		$this->load->model('m_user');
 	}
 
 	// halaman utama 
-	public function dashboard()
+	public function index()
 	{
 		$data = [
-			'title' => 'Admin KUA | Dashboard',
-			'totalRegistration' => count($this->m_admin->get('pernikahan')),
-			'approvedRegistrant' => count($this->m_admin->getWhere('pernikahan', ['approve' => 'approved']))
+			'title' => 'User KUA | Dashboard',
+			'data' => $this->m_user->get('berita'),
 		];
-		$this->load->view('admin/dashboard', $data);
+		$this->load->view('dashboard', $data);
 	}
 
 	// halaman pendaftaran
