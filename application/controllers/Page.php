@@ -1,18 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Page extends CI_Controller
+{
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('m_admin');
-		$role = $this->session->userdata('role');
-		// if ($role != 'admin') {
-		// 	redirect('admin/page/dashboard');
-		// }
-
-	}	
+	}
 
 	// halaman utama 
 	public function dashboard()
