@@ -11,7 +11,7 @@ class Page extends CI_Controller
 	}
 
 	// halaman utama 
-	public function index()
+	public function dashboard()
 	{
 		$data = [
 			'title' => 'Admin KUA | Dashboard',
