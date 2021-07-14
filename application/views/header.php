@@ -59,7 +59,7 @@
                     <?php } else { ?>
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menu</div>
-                            <a class="nav-link" href="<?= base_url('page/dashboard') ?>">
+                            <a class="nav-link" href="<?= base_url('page') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>

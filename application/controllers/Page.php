@@ -20,14 +20,13 @@ class Page extends CI_Controller
 		$this->load->view('dashboard', $data);
 	}
 
-	// halaman pendaftaran
-	public function registration()
+	// halaman informasi KUA
+	public function information_kua()
 	{
 		$data = [
 			'title' => 'Admin KUA | Registration',
-			'data' => $this->m_admin->get('pernikahan')
 		];
-		$this->load->view('admin/registration', $data);
+		$this->load->view('admin/info_kua', $data);
 	}
 
 	// halaman berita

@@ -2,7 +2,7 @@
 $this->load->view('header');
 ?>
 
-<h1 class="mt-4 mb-4">Dashboard</h1>
+<h1 class="mt-4 mb-4">Informasi KUA</h1>
 
 <h3 class="mb-4">Berita Terkini</h3>
 <div class="row">
