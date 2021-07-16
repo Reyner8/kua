@@ -2,12 +2,10 @@ body {
 	background-color: #feffde;
 }
 .navbar-title {
-	color: #feffde;
+	padding-top: 10px;
+	color: black;
 	width: 100%;
 	text-align: center;
-}
-.navbar-title p {
-	color: #ddffbc;
 }
 .sb-topnav {
 	height: 106px;
@@ -26,14 +24,23 @@ body {
 /* side navbar */
 
 .sb-sidenav-dark {
-	background: #52734d;
+	background: #f8fcfb;
+	color: black;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
-	color: #feffde;
+	color: black;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-	background: #91c788;
+	background: #f8fcfb;
 	color: #feffde;
+}
+/* link */
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+	color: black;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+	color: #6892d5;
 }
 /*footer*/
 
@@ -45,3 +52,14 @@ body {
 	color: #ddffbc !important;
 }
 /*login*/
+
+/* g */
+#tab-1 {
+	display: block;
+}
+
+#tab-2,
+#tab-3,
+#tab-4 {
+	display: none;
+}

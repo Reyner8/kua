@@ -16,16 +16,16 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.html">Admin KUA</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar-->
-        <div class="navbar-title">
+        <div class="navbar-title mt-2 mb-2">
             <h4>Kantor Urusan Agama (KUA) Kota Kupang</h4>
-            <p>"Terbentuknya Masyarakat Yang Islami, Berakhlakul Karimah dan Tercapainya Layanan Prima"</p>
-            <p>Jl. Kakatua No. 11 Bonipoi, Kupang Nusa Tenggara Timur. Telepon : 0852-3944-0094</p>
+            <p>"Terbentuknya Masyarakat Yang Islami, Berakhlakul Karimah dan Tercapainya Layanan Prima"<br>
+                Jl. Kakatua No. 11 Bonipoi, Kupang Nusa Tenggara Timur. Telepon : 0852-3944-0094</p>
         </div>
     </nav>
     <div id="layoutSidenav">
@@ -71,7 +71,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Informasi Pendaftaran Pernikahan
                             </a>
-                            <a class="nav-link" href="<?= base_url('admin/page/survey') ?>">
+                            <a class="nav-link" href="<?= base_url('page/registration') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Form Pendaftaran Pernikahan
                             </a>
@@ -86,15 +86,7 @@
                         </div>
                     <?php } ?>
                 </div>
-                <div class="sb-sidenav-footer">
-                    <?php if ($this->session->userdata('role')) { ?>
-                        <div class="small">Logged in as:</div>
-                        Admin
-                    <?php } else { ?>
-                        <div class="small">Masuk Sebagai Admin</div>
-                        <a href="" class="nav-link">Login</a>
-                    <?php } ?>
-                </div>
+
             </nav>
         </div>
         <div id="layoutSidenav_content">

@@ -52,6 +52,17 @@ class Page extends CI_Controller
 		$this->load->view('admin/news', $data);
 	}
 
+
+	// halaman survey
+	public function registration()
+	{
+		$data = [
+			'title' => 'User KUA | Registrasi',
+			'no_daftar' => $this->m_user->get('pernikahan')
+		];
+		$this->load->view('registration', $data);
+	}
+
 	// halaman survey
 	public function survey()
 	{
