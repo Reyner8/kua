@@ -22,6 +22,11 @@ class M_user extends CI_Model
         return $this->db->get()->row();
     }
 
+    public function getLastRecord()
+    {
+        return $this->db->query("SELECT * FROM pernikahan ORDER BY id DESC LIMIT 1")->row();
+    }
+
     public function insert($table, $data)
     {
         $this->db->insert($table, $data);

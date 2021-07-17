@@ -56,9 +56,17 @@ class Page extends CI_Controller
 	// halaman survey
 	public function registration()
 	{
+		$lastRecord = $this->m_user->getLastRecord('pernikahan');
+
+		if ($lastRecord) {
+			$lr = $lastRecord->no_daftar + 1;
+		} else {
+			$lr = 1;
+		}
 		$data = [
 			'title' => 'User KUA | Registrasi',
-			'no_daftar' => $this->m_user->get('pernikahan')
+			'no_daftar' => $lr,
+			'kode_kua' => $this->m_user->get('kua')
 		];
 		$this->load->view('registration', $data);
 	}
