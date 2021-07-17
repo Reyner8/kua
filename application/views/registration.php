@@ -80,7 +80,7 @@ $this->load->view('header');
                         </div>
                         <div class="col-md-4">
                            <div class="form-floating mb-3">
-                              <select name="kewarganegaraan" class="form-control">
+                              <select name="kewarganegaraan_suami" class="form-control">
                                  <option value="WNI">WNI</option>
                                  <option value="WNA">WNA</option>
                               </select>
