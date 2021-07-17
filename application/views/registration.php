@@ -295,18 +295,19 @@ $this->load->view('header');
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-9 mt-2" id="buttons">
+                    <div class="card">
+                        <div class="card-body">
+                            <button type="button" id="prev" class="btn btn-outline-secondary">Previous</button>
+                            <button type="button" id="next" class="btn btn-primary">Next</button>
+                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
         </form>
     </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-9 mt-2" id="buttons">
-            <div class="card">
-                <div class="card-body">
-                    <button id="prev" class="btn btn-outline-secondary">Previous</button>
-                    <button id="next" class="btn btn-primary">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 </div>
