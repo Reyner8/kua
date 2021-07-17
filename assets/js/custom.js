@@ -13,6 +13,10 @@ document.getElementById("next").addEventListener("click", function () {
 		document.getElementById("tab-3").style.display = "none";
 		document.getElementById("tab-4").style.display = "block";
 		current = "tab-4";
+	} else if (current == "tab-4") {
+		document.getElementById("tab-4").style.display = "none";
+		document.getElementById("tab-5").style.display = "block";
+		current = "tab-5";
 		document.getElementById("next").style.display = "none";
 		document.getElementById("submit").style.display = "inline-block";
 	}
@@ -31,6 +35,10 @@ document.getElementById("prev").addEventListener("click", function () {
 		document.getElementById("tab-4").style.display = "none";
 		document.getElementById("tab-3").style.display = "block";
 		current = "tab-3";
+	} else if (current == "tab-5") {
+		document.getElementById("tab-5").style.display = "none";
+		document.getElementById("tab-4").style.display = "block";
+		current = "tab-4";
 		document.getElementById("next").style.display = "inline-block";
 		document.getElementById("submit").style.display = "none";
 	}
