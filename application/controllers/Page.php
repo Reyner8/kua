@@ -20,9 +20,7 @@ class Page extends CI_Controller
 		$this->load->view('dashboard', $data);
 	}
 
-
-
-	// halaman berita
+	// halaman detail berita
 	public function detail_news($id)
 	{
 		$data = [
@@ -30,28 +28,6 @@ class Page extends CI_Controller
 			'data' => $this->m_user->getWhereRow('berita', ['id' => $id]),
 		];
 		$this->load->view('detail_berita', $data);
-	}
-
-	// halaman edit berita
-	public function edit_news($id)
-	{
-		$data = [
-			'title' => 'Admin KUA | Edit News',
-			'data' => $this->m_admin->get('berita'),
-			'edit' => $this->m_admin->getWhereRow('berita', ['id' => $id]),
-			'editPage' => true
-		];
-		$this->load->view('admin/news', $data);
-	}
-
-	// halaman survey
-	public function survey()
-	{
-		$data = [
-			'title' => 'Admin KUA | Survey',
-			'data' => $this->m_admin->get('survey')
-		];
-		$this->load->view('admin/survey', $data);
 	}
 
 	// ------
@@ -74,7 +50,7 @@ class Page extends CI_Controller
 		$this->load->view('info_registration', $data);
 	}
 
-	// halaman survey
+	// halaman pendaftaran
 	public function registration()
 	{
 		$lastRecord = $this->m_user->getLastRecord('pernikahan');
@@ -90,5 +66,24 @@ class Page extends CI_Controller
 			'kode_kua' => $this->m_user->get('kua')
 		];
 		$this->load->view('registration', $data);
+	}
+
+	// halaman survey
+	public function survey()
+	{
+		$data = [
+			'title' => 'User KUA | Survey',
+			'data' => $this->m_user->get('survey')
+		];
+		$this->load->view('survey', $data);
+	}
+
+	// halaman contact person
+	public function contact_person()
+	{
+		$data = [
+			'title' => 'User KUA | Contact Person',
+		];
+		$this->load->view('contact_person', $data);
 	}
 }

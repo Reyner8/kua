@@ -194,4 +194,23 @@ class Insert extends CI_Controller
 			redirect('admin/page/news');
 		}
 	}
+
+	public function insert_survey()
+	{
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$deskripsi = $this->input->post('deskripsi');
+
+		$insert = [
+			'table' => 'survey',
+			'data' => [
+				'nama' 		=> $nama,
+				'email' 		=> $email,
+				'deskripsi'  => $deskripsi,
+			]
+		];
+
+		$this->m_user->insert($insert['table'], $insert['data']);
+		redirect('page/survey');
+	}
 }

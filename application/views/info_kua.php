@@ -6,23 +6,13 @@ $this->load->view('header');
 
 <h3 class="mb-4"></h3>
 <div class="row">
-    <?php foreach ($data as $d) : ?>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3><?= $d->judul ?></h3>
-                    <p class="small"><?= $d->tanggal ?></p>
-                    <p>
-                        <?= substr($d->deskripsi, 0, 60) ?>
-                    </p>
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
 
-                </div>
-                <div class="card-footer d-flex align-items-center justify-content-center">
-                    <a class="small btn btn-secondary btn-sm stretched-link" href="<?= base_url('page/detail_berita/' . $d->id) ?>">Details</a>
-                </div>
             </div>
         </div>
-    <?php endforeach; ?>
+    </div>
 </div>
 <?php
 $this->load->view('footer')

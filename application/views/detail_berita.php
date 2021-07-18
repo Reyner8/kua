@@ -4,7 +4,7 @@ $this->load->view('header');
 
 <div class="row d-flex justify-content-center">
     <div class="col-md-6 mt-5">
-        <h3 class="mb-4 text-center">Berita Terkini</h3>
+        <h1 class="mb-4 text-center">Detail Berita</h1>
     </div>
 </div>
 <div class="row d-flex justify-content-center">
@@ -15,7 +15,6 @@ $this->load->view('header');
                 <p class="text-center"><?= $data->tanggal ?></p>
                 <p class="mt-4">
                     <?= $data->deskripsi ?>
-
                 </p>
             </div>
 

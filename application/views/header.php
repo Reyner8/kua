@@ -64,7 +64,7 @@
                                 Dashboard
                             </a>
                             <a class="nav-link" href="<?= base_url('page/information_kua') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-info-circle"></i></div>
                                 Informasi KUA
                             </a>
                             <a class="nav-link" href="<?= base_url('page/information_registration') ?>">
@@ -72,16 +72,21 @@
                                 Informasi Pendaftaran Pernikahan
                             </a>
                             <a class="nav-link" href="<?= base_url('page/registration') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                                 Form Pendaftaran Pernikahan
                             </a>
-                            <a class="nav-link" href="<?= base_url('auth/logout') ?>">
-                                <div class="sb-nav-link-icon"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></div>
+                            <a class="nav-link" href="<?= base_url('page/survey') ?>">
+                                <div class="sb-nav-link-icon"><i class="fa fa-question" aria-hidden="true"></i></div>
                                 Survey
                             </a>
-                            <a class="nav-link" href="<?= base_url('auth/logout') ?>">
-                                <div class="sb-nav-link-icon"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></div>
+                            <a class="nav-link" href="<?= base_url('page/contact_person') ?>">
+                                <div class="sb-nav-link-icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
                                 Contact Person
+                            </a>
+                            <hr>
+                            <a class="nav-link" href="<?= base_url('page/contact_person') ?>">
+                                <div class="sb-nav-link-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                Admin Login
                             </a>
                         </div>
                     <?php } ?>

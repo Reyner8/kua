@@ -22,7 +22,9 @@ body {
 	background-color: #52734d !important;
 }
 /* side navbar */
-
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+	color: #6892d5;
+}
 .sb-sidenav-dark {
 	background: #f8fcfb;
 	color: black;
@@ -36,7 +38,7 @@ body {
 }
 /* link */
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
-	color: black;
+	color: #6892d5;
 }
 
 .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
@@ -58,7 +60,7 @@ body {
 	width: 100px;
 	margin: 50px;
 }
-/* g */
+/* tab pendaftaran */
 #tab-1 {
 	display: block;
 }
@@ -72,4 +74,15 @@ body {
 
 #submit {
 	display: none;
+}
+
+/* no-border */
+.no-border {
+	border: none;
+}
+
+#scroll {
+	height: 350px;
+	padding: 12px;
+	overflow: auto;
 }
