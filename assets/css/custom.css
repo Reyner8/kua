@@ -53,6 +53,11 @@ body {
 }
 /*login*/
 
+/* logo */
+.sb-topnav .navbar-brand {
+	width: 100px;
+	margin: 50px;
+}
 /* g */
 #tab-1 {
 	display: block;

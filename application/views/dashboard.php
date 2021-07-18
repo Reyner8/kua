@@ -2,9 +2,12 @@
 $this->load->view('header');
 ?>
 
-<h1 class="mt-4 mb-4">Dashboard</h1>
 
-<h3 class="mb-4">Berita Terkini</h3>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6 mt-5">
+        <h3 class="mb-4 text-center">Berita Terkini</h3>
+    </div>
+</div>
 <div class="row">
     <?php foreach ($data as $d) : ?>
         <div class="col-md-4">
@@ -18,7 +21,7 @@ $this->load->view('header');
 
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-center">
-                    <a class="small btn btn-secondary btn-sm stretched-link" href="<?= base_url('page/detail_berita/' . $d->id) ?>">Details</a>
+                    <a class="small btn btn-secondary btn-sm stretched-link" href="<?= base_url('page/detail_news/' . $d->id) ?>">Details</a>
                 </div>
             </div>
         </div>

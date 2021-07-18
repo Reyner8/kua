@@ -20,24 +20,16 @@ class Page extends CI_Controller
 		$this->load->view('dashboard', $data);
 	}
 
-	// halaman informasi KUA
-	public function information_kua()
-	{
-		$data = [
-			'title' => 'Admin KUA | Registration',
-		];
-		$this->load->view('admin/info_kua', $data);
-	}
+
 
 	// halaman berita
-	public function news()
+	public function detail_news($id)
 	{
 		$data = [
-			'title' => 'Admin KUA | News',
-			'data' => $this->m_admin->get('berita'),
-			'editPage' => false
+			'title' => 'User KUA | News',
+			'data' => $this->m_user->getWhereRow('berita', ['id' => $id]),
 		];
-		$this->load->view('admin/news', $data);
+		$this->load->view('detail_berita', $data);
 	}
 
 	// halaman edit berita
@@ -52,6 +44,35 @@ class Page extends CI_Controller
 		$this->load->view('admin/news', $data);
 	}
 
+	// halaman survey
+	public function survey()
+	{
+		$data = [
+			'title' => 'Admin KUA | Survey',
+			'data' => $this->m_admin->get('survey')
+		];
+		$this->load->view('admin/survey', $data);
+	}
+
+	// ------
+
+	// halaman informasi KUA
+	public function information_kua()
+	{
+		$data = [
+			'title' => 'Admin KUA | Information KUA',
+		];
+		$this->load->view('info_kua', $data);
+	}
+
+	// halaman informasi pendaftaran
+	public function information_registration()
+	{
+		$data = [
+			'title' => 'Admin KUA | Information Registration',
+		];
+		$this->load->view('info_registration', $data);
+	}
 
 	// halaman survey
 	public function registration()
@@ -69,15 +90,5 @@ class Page extends CI_Controller
 			'kode_kua' => $this->m_user->get('kua')
 		];
 		$this->load->view('registration', $data);
-	}
-
-	// halaman survey
-	public function survey()
-	{
-		$data = [
-			'title' => 'Admin KUA | Survey',
-			'data' => $this->m_admin->get('survey')
-		];
-		$this->load->view('admin/survey', $data);
 	}
 }

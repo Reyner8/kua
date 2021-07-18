@@ -18,7 +18,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Admin KUA</a>
+        <img src="<?= base_url('assets/logo.png') ?>" alt="Logo" class="navbar-brand ps-3">
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar-->
@@ -67,7 +67,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 Informasi KUA
                             </a>
-                            <a class="nav-link" href="<?= base_url('admin/page/news') ?>">
+                            <a class="nav-link" href="<?= base_url('page/information_registration') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Informasi Pendaftaran Pernikahan
                             </a>
