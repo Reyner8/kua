@@ -166,6 +166,7 @@ class Insert extends CI_Controller
 		}
 	}
 
+
 	// input berita
 	public function insert_news()
 	{

@@ -22,6 +22,11 @@ class M_user extends CI_Model
         return $this->db->get()->row();
     }
 
+    public function checkRegistration($no_daftar, $nik_suami, $nik_istri)
+    {
+        return $this->db->query("SELECT * FROM pernikahan,penduduk WHERE pernikahan.id_penduduk = penduduk.id AND pernikahan.id_pasangan = penduduk.id")->row();
+    }
+
     public function getLastRecord()
     {
         return $this->db->query("SELECT * FROM pernikahan ORDER BY id DESC LIMIT 1")->row();
