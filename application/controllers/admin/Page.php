@@ -26,10 +26,13 @@ class Page extends CI_Controller
 	{
 		$data = [
 			'title' => 'Admin KUA | Registration',
-			'data' => $this->m_admin->get('pernikahan')
+			'pria' => $this->m_admin->getMempelaiPria(),
+			'wanita' => $this->m_admin->getMempelaiWanita()
 		];
 		$this->load->view('admin/registration', $data);
 	}
+
+
 
 	// halaman berita
 	public function news()
