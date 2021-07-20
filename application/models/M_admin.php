@@ -29,7 +29,12 @@ class M_admin extends CI_Model
 
     public function getMempelaiPriaRow($id)
     {
-        return $this->db->query("SELECT pernikahan.*, penduduk.nama, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
+        return $this->db->query("SELECT pernikahan.*, penduduk.nama, penduduk.email, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
+    }
+
+    public function getMempelaiWanitaRow($id)
+    {
+        return $this->db->query("SELECT pernikahan.*, penduduk.nama, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_pasangan = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
     }
 
     public function getMempelaiWanita()
