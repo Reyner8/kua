@@ -51,12 +51,12 @@ class Edit extends CI_Controller
 		];
 		$this->load->library('pdf');
 
-		$msg = $this->load->view('laporan', $data);
+		$msg = $this->pdf->load_view('laporan');
 
 		// convert string to html
 		$html = mb_convert_encoding($msg, 'HTML-ENTITIES', 'UTF-8');
 
-		$this->pdf->load_html($html);
+		$this->pdf->load_html($msg);
 		$this->pdf->setPaper('A4', 'portrait');
 		$this->pdf->render();
 		$output = $this->pdf->output();
