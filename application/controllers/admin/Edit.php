@@ -45,23 +45,25 @@ class Edit extends CI_Controller
 	// laporan pendaftaran
 	private function laporan_pdf($id)
 	{
+		$this->load->library('pdf');
 		$data = [
 			'pria' => $this->m_admin->getMempelaiPriaRow($id),
 			'wanita' => $this->m_admin->getMempelaiWanitaRow($id)
 		];
-		$this->load->library('pdf');
 
-		$msg = $this->pdf->load_view('laporan');
+		$laporan = $this->load->view('laporan', $data, true);
+		// $laporan = $this->pdf->load_view('laporan', $data, true);
 
-		// convert string to html
-		$html = mb_convert_encoding($msg, 'HTML-ENTITIES', 'UTF-8');
+		// $html = mb_convert_encoding($msg, 'HTML-ENTITIES', 'UTF-8');
+		$fileName = rand() . '-Biodata-no_daftar-' . $data['pria']->no_daftar . '.pdf';
+		$dir = 'assets/temp/';
 
-		$this->pdf->load_html($msg);
+		$this->pdf->filename = $fileName;
+		$this->pdf->load_html($laporan);
 		$this->pdf->setPaper('A4', 'portrait');
 		$this->pdf->render();
 		$output = $this->pdf->output();
-		$fileName = rand() . '-Biodata-no_daftar-' . $data['pria']->no_daftar . '.pdf';
-		$dir = 'assets/temp/';
+
 		file_put_contents($dir . $fileName, $output);
 		return $fileName;
 	}
