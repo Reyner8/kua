@@ -24,17 +24,17 @@ class M_admin extends CI_Model
 
     public function getMempelaiPria()
     {
-        return $this->db->query("SELECT pernikahan.*, penduduk.nama, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua")->result();
+        return $this->db->query("SELECT pernikahan.*, penduduk.nik,penduduk.nama, penduduk.tempat_lahir, penduduk.tanggal_lahir, penduduk.jk, penduduk.kewarganegaraan, penduduk.umur, penduduk.no_tlp, penduduk.email, penduduk.pekerjaan, penduduk.alamat,penduduk.agama, penduduk.status, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua")->result();
     }
 
     public function getMempelaiPriaRow($id)
     {
-        return $this->db->query("SELECT pernikahan.*, penduduk.nama, penduduk.email, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
+        return $this->db->query("SELECT pernikahan.*, penduduk.nik,penduduk.nama, penduduk.tempat_lahir, penduduk.tanggal_lahir, penduduk.jk, penduduk.kewarganegaraan, penduduk.umur, penduduk.no_tlp, penduduk.email,penduduk.pekerjaan, penduduk.alamat,penduduk.agama, penduduk.status,penduduk.foto, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_penduduk = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
     }
 
     public function getMempelaiWanitaRow($id)
     {
-        return $this->db->query("SELECT pernikahan.*, penduduk.nama, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_pasangan = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
+        return $this->db->query("SELECT pernikahan.*, penduduk.nik,penduduk.nama, penduduk.tempat_lahir, penduduk.tanggal_lahir, penduduk.jk, penduduk.kewarganegaraan, penduduk.umur, penduduk.no_tlp, penduduk.email,penduduk.pekerjaan, penduduk.alamat,penduduk.agama, penduduk.status,penduduk.foto, kua.kode_kua, kua.kota,kua.kecamatan FROM pernikahan,penduduk,kua WHERE pernikahan.id_pasangan = penduduk.id AND kua.id = pernikahan.id_kua AND pernikahan.id = '$id'")->row();
     }
 
     public function getMempelaiWanita()

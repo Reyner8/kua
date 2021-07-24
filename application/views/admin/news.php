@@ -3,7 +3,7 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__ . '/header.php');
 ?>
 
-<h1 class="mt-4">Pendaftaran</h1>
+<h1 class="mt-4">Berita</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Admin/Data Berita</li>
 </ol>
@@ -11,12 +11,12 @@ require_once(__ROOT__ . '/header.php');
     <div class="col-md-5">
         <div class="card mb-4">
             <?= $this->session->flashdata('err'); ?>
-             <div class="card-header">
+            <div class="card-header">
                 <i class="fas fa-columns me-1"></i>
                 Form Berita
             </div>
             <div class="card-body">
-                <?php if ($editPage == false) {?>
+                <?php if ($editPage == false) { ?>
                     <form method="POST" action=" <?= base_url('admin/insert/insert_news') ?>">
                         <div class="form-floating mb-3">
                             <input class="form-control" id="judul" type="text" placeholder="judul" name="judul" />
@@ -28,8 +28,8 @@ require_once(__ROOT__ . '/header.php');
                         </div>
                         <button class="btn btn-primary">Tambah</button>
                     </form>
-                <?php }else {?>
-                    <form method="POST" action=" <?= base_url('admin/edit/update_news/'. $edit->id) ?>">
+                <?php } else { ?>
+                    <form method="POST" action=" <?= base_url('admin/edit/update_news/' . $edit->id) ?>">
                         <div class="form-floating mb-3">
                             <input class="form-control" id="judul" type="text" placeholder="judul" name="judul" value="<?= $edit->judul ?>" />
                             <label for="judul">Judul Berita</label>
@@ -40,7 +40,7 @@ require_once(__ROOT__ . '/header.php');
                         </div>
                         <button class="btn btn-primary">Ubah</button>
                     </form>
-                <?php }?>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@ require_once(__ROOT__ . '/header.php');
                 Data Berita yang sudah terisi
             </div>
             <div class="card-body">
-                 <table id="datatablesSimple">
+                <table id="datatablesSimple">
                     <thead>
                         <tr>
                             <th>Judul</th>
@@ -61,14 +61,14 @@ require_once(__ROOT__ . '/header.php');
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($data as $d) :?>
+                        <?php foreach ($data as $d) : ?>
                             <tr>
                                 <td><?= $d->judul ?></td>
                                 <td><?= $d->deskripsi ?></td>
                                 <td><?= $d->tanggal ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/page/edit_news/' . $d->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
-                                    <a href="<?= base_url('admin/delete/delete_news/'. $d->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a href="<?= base_url('admin/delete/delete_news/' . $d->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -157,7 +157,7 @@ class Insert extends CI_Controller
 		if (!empty($file)) {
 			if ($this->upload->do_upload($fileName)) {
 				$berkas = $this->upload->data();
-				return $berkas['file_name'];
+				return $newName;
 			} else {
 				return '';
 			}

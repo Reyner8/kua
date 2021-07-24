@@ -65,52 +65,53 @@
       <table style="width: 100%;">
          <tr>
             <th>NIK</th>
-            <td>: 123</td>
+            <td>: <?= $pria->nik ?></td>
          </tr>
          <tr>
             <th>Kewarganegaraan</th>
-            <td>: WNI</td>
+            <td>: <?= $pria->kewarganegaraan ?></td>
          </tr>
          <tr>
             <th>Nama</th>
-            <td>: Reyner Neo</td>
+            <td>: <?= $pria->nama ?></td>
          </tr>
          <tr>
             <th>Tempat Lahir</th>
-            <td>: Kupang</td>
+            <td>: <?= $pria->tempat_lahir ?></td>
          </tr>
          <tr>
             <th>Tanggal Lahir</th>
-            <td>: 08/05/1998</td>
+            <td>: <?= $pria->tanggal_lahir ?></td>
          </tr>
          <tr>
             <th>Umur</th>
-            <td>: 23</td>
+            <td>: <?= $pria->umur ?></td>
+         </tr>
+         <tr>
+            <th>JK</th>
+            <td>: <?= $pria->jk ?></td>
          </tr>
          <tr>
             <th>Status</th>
-            <td>: Lajang</td>
+            <td>: <?= $pria->status ?></td>
          </tr>
          <tr>
             <th>Agama</th>
-            <td>: Katolik</td>
+            <td>: <?= $pria->agama ?></td>
          </tr>
          <tr>
             <th>Alamat</th>
-            <td>: Oeba Kupang</td>
+            <td>: <?= $pria->alamat ?></td>
          </tr>
          <tr>
             <th>Pekerjaan</th>
-            <td>: Wiraswasta</td>
+            <td>: <?= $pria->pekerjaan ?></td>
          </tr>
          <tr>
             <th>Telepon</th>
-            <td>: 081237165055</td>
+            <td>: <?= $pria->no_tlp ?></td>
          </tr>
-         <tr>
-            <th>Email</th>
-            <td>: reyner@gmail.com</td>
-         </tr>
+
          <tr>
             <th>
             </th>
@@ -124,59 +125,60 @@
    </div>
 
    <div class="grid-item">
-      <table>
+      <table style="width: 100%;">
          <tr>
             <th>NIK</th>
-            <td>: 123</td>
+            <td>: <?= $wanita->nik ?></td>
          </tr>
          <tr>
             <th>Kewarganegaraan</th>
-            <td>: WNI</td>
+            <td>: <?= $wanita->kewarganegaraan ?></td>
          </tr>
          <tr>
             <th>Nama</th>
-            <td>: Reyner Neo</td>
+            <td>: <?= $wanita->nama ?></td>
          </tr>
          <tr>
             <th>Tempat Lahir</th>
-            <td>: Kupang</td>
+            <td>: <?= $wanita->tempat_lahir ?></td>
          </tr>
          <tr>
             <th>Tanggal Lahir</th>
-            <td>: 08/05/1998</td>
+            <td>: <?= $wanita->tanggal_lahir ?></td>
          </tr>
          <tr>
             <th>Umur</th>
-            <td>: 23</td>
+            <td>: <?= $wanita->umur ?></td>
+         </tr>
+         <tr>
+            <th>JK</th>
+            <td>: <?= $wanita->jk ?></td>
          </tr>
          <tr>
             <th>Status</th>
-            <td>: Lajang</td>
+            <td>: <?= $wanita->status ?></td>
          </tr>
          <tr>
             <th>Agama</th>
-            <td>: Katolik</td>
+            <td>: <?= $wanita->agama ?></td>
          </tr>
          <tr>
             <th>Alamat</th>
-            <td>: Oeba Kupang</td>
+            <td>: <?= $wanita->alamat ?></td>
          </tr>
          <tr>
             <th>Pekerjaan</th>
-            <td>: Wiraswasta</td>
+            <td>: <?= $wanita->pekerjaan ?></td>
          </tr>
          <tr>
             <th>Telepon</th>
-            <td>: 081237165055</td>
+            <td>: <?= $wanita->no_tlp ?></td>
          </tr>
-         <tr>
-            <th>Email</th>
-            <td>: reyner@gmail.com</td>
-         </tr>
+
          <tr>
             <th>
             </th>
          </tr>
       </table>
    </div>
-   <p>Pendaftar dengan nomor daftar 10 sudah diapprove oleh admin. Silahkan mengikuti pertemuan yang sudah ditentukan yaitu <br> 10 November 2021 jam 10.30 pagi, diharapkan mengikuti sesuai jadwal yang diberikan</p>
+   <p>Pendaftar dengan nomor daftar <?= $pria->no_daftar ?> sudah diapprove oleh admin. Silahkan mengikuti pertemuan yang sudah ditentukan yaitu <br> <?= date('d-m-Y', strtotime('-7 days', strtotime($pria->tanggal_nikah)));  ?>, diharapkan mengikuti sesuai jadwal yang diberikan</p>

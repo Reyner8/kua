@@ -28,16 +28,21 @@ class Edit extends CI_Controller
 			'table' => 'pernikahan',
 			'data' => ['approve' => $approve]
 		];
-		// $this->m_admin->update(
-		// 	$update['table'],
-		// 	$update['data'],
-		// 	['id' => $id]
-		// );
+		$this->m_admin->update(
+			$update['table'],
+			$update['data'],
+			['id' => $id]
+		);
 
 		// Send Email
-		$fileName = $this->laporan_pdf($id);
-		$data = $this->m_admin->getMempelaiPriaRow($id);
-		$this->sendEmail($data->email, $approve, $fileName);
+		if ($approve == 'rejected') {
+			$data = $this->m_admin->getMempelaiPriaRow($id);
+			$this->sendEmail($data->email, $approve, '');
+		} elseif ($approve == 'approved') {
+			$fileName = $this->laporan_pdf($id);
+			$data = $this->m_admin->getMempelaiPriaRow($id);
+			$this->sendEmail($data->email, $approve, $fileName);
+		}
 
 		redirect('admin/page/registration');
 	}
@@ -68,7 +73,7 @@ class Edit extends CI_Controller
 		return $fileName;
 	}
 
-	private function sendEmail($email, $approve, $fileName)
+	private function sendEmail($email, $approve, $fileName = '')
 	{
 		// Instantiation and passing `true` enables exceptions
 		$mail = new PHPMailer(true);
@@ -112,5 +117,22 @@ class Edit extends CI_Controller
 		];
 		$this->m_admin->update($update['table'], $update['data'], ['id' => $id]);
 		redirect('admin/page/news');
+	}
+
+	public function update_kua($id)
+	{
+		$kode = $this->input->post('kode');
+		$kota = $this->input->post('kota');
+		$kecamatan = $this->input->post('kecamatan');
+		$update = [
+			'table' => 'kua',
+			'data' => [
+				'kode_kua'    		=> $kode,
+				'kota'    	=> $kota,
+				'kecamatan'    	=> $kecamatan,
+			]
+		];
+		$this->m_admin->update($update['table'], $update['data'], ['id' => $id]);
+		redirect('admin/page/kua');
 	}
 }

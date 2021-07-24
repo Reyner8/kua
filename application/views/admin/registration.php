@@ -26,6 +26,7 @@ require_once(__ROOT__ . '/header.php');
                             <th>Alamat</th>
                             <th>Kode KUA</th>
                             <th>Kota / Kecamatan</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -44,6 +45,7 @@ require_once(__ROOT__ . '/header.php');
                                 <td><?= $d->alamat ?></td>
                                 <td><?= $d->kode_kua ?></td>
                                 <td><?= $d->kota . ' / ' . $d->kecamatan ?></td>
+                                <td><?= $d->approve ?></td>
                                 <td>
                                     <?php if ($d->approve == 'pending') { ?>
                                         <a href="<?= base_url('admin/edit/update_registration/approved/' . $d->id) ?>"><i class="fa fa-check" aria-hidden="true"></i></a>
@@ -53,6 +55,7 @@ require_once(__ROOT__ . '/header.php');
                                     <?php } elseif ($d->approve == 'rejected') { ?>
                                         <a href="<?= base_url('admin/edit/update_registration/approved/' . $d->id) ?>"><i class="fa fa-check" aria-hidden="true"></i></a>
                                     <?php } ?>
+                                    <a href="<?= base_url('admin/page/detail_registration/' . $d->id) ?>"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

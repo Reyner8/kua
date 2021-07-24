@@ -43,6 +43,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 Data Pendaftaran
                             </a>
+                            <a class="nav-link" href="<?= base_url('admin/page/kua') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
+                                Data Kantor KUA
+                            </a>
                             <a class="nav-link" href="<?= base_url('admin/page/news') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Data Berita

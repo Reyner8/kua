@@ -32,6 +32,16 @@ class Page extends CI_Controller
 		$this->load->view('admin/registration', $data);
 	}
 
+	public function detail_registration($id)
+	{
+		$data = [
+			'pria' => $this->m_admin->getMempelaiPriaRow($id),
+			'wanita' => $this->m_admin->getMempelaiWanitaRow($id),
+			'berkas' => $this->m_admin->getWhere('berkas', ['id_pernikahan' => $id])
+		];
+		$this->load->view('admin/detail_registration', $data);
+	}
+
 
 
 	// halaman berita
@@ -65,5 +75,27 @@ class Page extends CI_Controller
 			'data' => $this->m_admin->get('survey')
 		];
 		$this->load->view('admin/survey', $data);
+	}
+
+	// halaman kua
+	public function kua()
+	{
+		$data = [
+			'title' => 'Admin KUA | Kantor KUA',
+			'data' => $this->m_admin->get('kua'),
+			'editPage' => false
+		];
+		$this->load->view('admin/kua', $data);
+	}
+	// halaman edit kua
+	public function edit_kua($id)
+	{
+		$data = [
+			'title' => 'Admin KUA | Edit KUA',
+			'data' => $this->m_admin->get('kua'),
+			'edit' => $this->m_admin->getWhereRow('kua', ['id' => $id]),
+			'editPage' => true
+		];
+		$this->load->view('admin/kua', $data);
 	}
 }
