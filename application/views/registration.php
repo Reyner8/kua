@@ -250,7 +250,7 @@ $this->load->view('header');
                 <div class="col-md-3">
                   <div class="form-floating mb-3">
                     <select name="jk_istri" class="form-control">
-                      <option value="pria">Pria</option>
+                      <option value="wanita">Wanita</option>
                     </select>
                     <label for="jk">Jenis Kelamin</label>
                   </div>
@@ -344,19 +344,19 @@ $this->load->view('header');
                 <div class="col-md-4">
                   <label for="">Surat akta cerai</label>
                   <div class="form-floating mb-3 mt-2">
-                    <input type="file" name="akta_cerai" required />
+                    <input type="file" name="akta_cerai" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="">Surat izin komandan</label>
                   <div class="form-floating mb-3 mt-2">
-                    <input type="file" name="izin_komandan" required />
+                    <input type="file" name="izin_komandan" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="">Surat izin kedutaan</label>
                   <div class="form-floating mb-3 mt-2">
-                    <input type="file" name="izin_kedutaan" required />
+                    <input type="file" name="izin_kedutaan" />
                   </div>
                 </div>
                 <div class="col-md-4">
