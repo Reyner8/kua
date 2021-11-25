@@ -11,12 +11,7 @@ $this->load->view('header');
                 <b>Alur Pendaftaran Pernikahan</b>
             </div>
             <div class="card-body">
-                <ul>
-                    <li>Masing – masing calon mempelai saling mengadakan penelitian apakah mereka saling cinta atau setuju dan apakah kedua orang tua mereka menyetujui atau merestuinya karena erat kaitannya dengan surat-surat persetujuan kedua calon mempelai dan surat izin orang tua bagi yang belum berusia 21 Tahun.</li>
-                    <li>Masing – masing berusaha meneliti apakah ada halangan pernikahan baik menurut hukum munakahad maupun menurut peraturan perundang-undangan yang berlaku. (Untuk mencegah terjadinya penolakan atau pembatalan perkawinan.</li>
-                    <li>Calon mempelai mempelajari ilmu pengetahuan tentang pembinaan rumah tangga. Hak dan kewajiban suami-istri dsb.</li>
-                    <li>Dalam ranga meningkatkan kualitas keturunan yang akan dilahirkan calon mempelai supaya memeriksakan kesehatannya dan kepada calon mempelai wanita diberikan suntikan imunisasi tetanus toxoid</li>
-                </ul>
+                <img class="img-fluid" src="<?= base_url('assets/alur-pendaftaran.jpeg') ?>" alt="alur-pendaftaran">
             </div>
 
         </div>
