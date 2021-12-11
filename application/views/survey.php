@@ -8,19 +8,23 @@ $this->load->view('header');
   <div class="col-md-12">
     <div class="card mb-4">
       <div class="card-body">
-        <form action="<?= base_url('insert/insert_survey') ?>" method="post">
+        <form id="form" action="<?= base_url('insert/insert_survey') ?>" method="post" data-parsley-ui-enabled="true" data-parsley-validate="">
           <div class="row">
             <div class="col-md-4">
               <div class="form-floating mb-3">
-                <input class="form-control" id="nama" type="text" placeholder="Nama anda" name="nama">
+                <input class="form-control" id="nama" type="text" placeholder="Nama anda" name="nama" required="">
                 <label for="no_daftar">Nama anda</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="email" type="email" placeholder="Email anda" name="email">
+                <input class="form-control" id="email" type="email" placeholder="Email anda" name="email" required="">
                 <label for="email">Email anda</label>
               </div>
               <div class="form-floating mb-3">
-                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="100" rows="100"></textarea>
+                <input class="form-control" id="email" type="file" placeholder="Email anda" name="email" required="">
+                <label for="email">helo anda</label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="100" rows="100" required=""></textarea>
                 <label for="deskripsi">Deskripsi</label>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -50,6 +54,8 @@ $this->load->view('header');
     </div>
   </div>
 </div>
+
+
 <?php
 $this->load->view('footer')
 ?>
