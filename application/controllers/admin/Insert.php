@@ -8,6 +8,7 @@ class Insert extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_admin');
+		$this->load->library('upload');
 		$this->load->library('form_validation');
 	}
 
@@ -22,15 +23,22 @@ class Insert extends CI_Controller
 			// ambil data dari form
 			$judul = $this->input->post('judul');
 			$deskripsi = $this->input->post('deskripsi');
+			$foto = $this->__uploadFile('fotopost');
 
-			$insert = [
-				'table' => 'berita',
-				'data' => [
-					'judul'    		=> $judul,
-					'deskripsi'    	=> $deskripsi,
-					'tanggal'    	=> date('Y-m-d'),
-				]
-			];
+			if ($foto != '') {
+
+				$insert = [
+					'table' => 'berita',
+					'data' => [
+						'judul'    		=> $judul,
+						'deskripsi'    	=> $deskripsi,
+						'foto' 	=> $foto,
+						'tanggal'    	=> date('Y-m-d'),
+					]
+				];
+			} else {
+				$this->session->set_flashdata('err', '<div class="mt-3 alert alert-danger alert-dismissible fade show" role="alert"> Input data gagal, Silahkan coba lagi !</div>');
+			}
 
 			$this->m_admin->insert($insert['table'], $insert['data']);
 			redirect('admin/page/news');
@@ -68,6 +76,32 @@ class Insert extends CI_Controller
 		} else {
 			$this->session->set_flashdata('err', '<div class="mt-3 alert alert-danger alert-dismissible fade show" role="alert"> Input data gagal, Silahkan coba lagi !</div>');
 			redirect('admin/page/kua');
+		}
+	}
+
+	private function __uploadFile($fileName)
+	{
+		$file = $_FILES[$fileName]['name'];
+		$explode = explode('.', $file);
+		$newName = rand() . '-' . $fileName . '.' . $explode[1];
+
+		$config['upload_path'] = './assets/berita';
+		$config['allowed_types'] = 'jpg|jpeg|png|pdf';
+		$config['max_size'] = '0';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $newName;
+
+		$this->upload->initialize($config);
+		if (!empty($file)) {
+			if ($this->upload->do_upload($fileName)) {
+				$berkas = $this->upload->data();
+				return $newName;
+			} else {
+				return '';
+			}
+		} else {
+			return '';
 		}
 	}
 }

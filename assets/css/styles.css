@@ -56,12 +56,6 @@
 	}
 }
 
-[id^="parsley-id-"] {
-	list-style-type: none !important;
-	color: red !important;
-	padding-left: 0 !important;
-}
-
 body {
 	margin: 0;
 	font-family: var(--bs-font-sans-serif);

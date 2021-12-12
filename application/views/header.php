@@ -12,6 +12,7 @@
 
     <link href="<?= base_url('assets/css/styles.css'); ?>" rel="stylesheet" />
     <link href="<?= base_url('assets/css/custom.css'); ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/validation.css'); ?>" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 

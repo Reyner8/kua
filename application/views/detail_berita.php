@@ -9,6 +9,7 @@ $this->load->view('header');
 </div>
 <div class="row d-flex justify-content-center">
     <div class="col-md-10">
+        <img class="card-img-top" src="<?= base_url('assets/berita/' . $data->foto) ?>" alt="Card image cap">
         <div class="card mb-4">
             <div class="card-body">
                 <h4 class="text-center"><?= $data->judul ?></h4>

@@ -12,6 +12,7 @@ $this->load->view('header');
     <?php foreach ($data as $d) : ?>
         <div class="col-md-4">
             <div class="card mb-4">
+                <img class="card-img-top" src="<?= base_url('assets/berita/' . $d->foto) ?>" alt="Card image cap">
                 <div class="card-body">
                     <h3><?= $d->judul ?></h3>
                     <p class="small"><?= $d->tanggal ?></p>

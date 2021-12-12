@@ -12,7 +12,7 @@ $this->load->view('header');
     <?= $this->session->flashdata('err') ?>
   </div>
   <div class="col-md-12">
-    <form action="<?= base_url('insert/insert_registration') ?>" method="POST" enctype="multipart/form-data">
+    <form id="form" action="<?= base_url('insert/insert_registration') ?>" method="POST" enctype="multipart/form-data" data-parsley-ui-enabled="true" data-parsley-validate="">
       <div class="row d-flex justify-content-center">
         <!-- form lokasi -->
         <div class="col-md-12" id="tab-1">
@@ -297,19 +297,19 @@ $this->load->view('header');
             </div>
             <div class="card-body">
               <div class="form-floating mb-3">
-                <input class="form-control" id="nik_saksi" type="text" placeholder="Nik Saksi" name="nik_saksi">
+                <input class="form-control" id="nik_saksi" type="text" placeholder="Nik Saksi" name="nik_saksi" required>
                 <label for="nik_saksi">Nik Saksi</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="nama" type="text" placeholder="Nama" name="nama_saksi">
+                <input class="form-control" id="nama" type="text" placeholder="Nama" name="nama_saksi" required>
                 <label for="nama">Nama</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="umur" type="text" placeholder="umur" name="umur_saksi">
+                <input class="form-control" id="umur" type="text" placeholder="umur" name="umur_saksi" required>
                 <label for="umur">Umur</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="alamat" type="text" placeholder="alamat" name="alamat_saksi">
+                <input class="form-control" id="alamat" type="text" placeholder="alamat" name="alamat_saksi" required>
                 <label for="alamat">Alamat</label>
               </div>
             </div>
@@ -345,18 +345,22 @@ $this->load->view('header');
                   <label for="">Surat akta cerai</label>
                   <div class="form-floating mb-3 mt-2">
                     <input type="file" name="akta_cerai" />
+                    <small>*optional</small>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="">Surat izin komandan</label>
                   <div class="form-floating mb-3 mt-2">
                     <input type="file" name="izin_komandan" />
+                    <small>*optional</small>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="">Surat izin kedutaan</label>
                   <div class="form-floating mb-3 mt-2">
                     <input type="file" name="izin_kedutaan" />
+                    <small>*optional</small>
+
                   </div>
                 </div>
                 <div class="col-md-4">

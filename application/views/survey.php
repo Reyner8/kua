@@ -20,10 +20,6 @@ $this->load->view('header');
                 <label for="email">Email anda</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="email" type="file" placeholder="Email anda" name="email" required="">
-                <label for="email">helo anda</label>
-              </div>
-              <div class="form-floating mb-3">
                 <textarea class="form-control" name="deskripsi" id="deskripsi" cols="100" rows="100" required=""></textarea>
                 <label for="deskripsi">Deskripsi</label>
               </div>

@@ -15,6 +15,7 @@ class Edit extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_admin');
+		$this->load->library('upload');
 	}
 
 	// konfirmasi pernikahan
@@ -107,16 +108,48 @@ class Edit extends CI_Controller
 	{
 		$judul = $this->input->post('judul');
 		$deskripsi = $this->input->post('deskripsi');
+		if ($_FILES['fotopost']['name'] == '') {
+			$foto = $this->m_admin->getWhereRow('berita', ['id' => $id])->foto;
+		} else {
+			$foto = $this->__uploadFile('fotopost');
+		}
 		$update = [
 			'table' => 'berita',
 			'data' => [
 				'judul'    		=> $judul,
 				'deskripsi'    	=> $deskripsi,
+				'foto' => $foto,
 				'tanggal'    	=> date('Y-m-d'),
 			]
 		];
 		$this->m_admin->update($update['table'], $update['data'], ['id' => $id]);
 		redirect('admin/page/news');
+	}
+
+	private function __uploadFile($fileName)
+	{
+		$file = $_FILES[$fileName]['name'];
+		$explode = explode('.', $file);
+		$newName = rand() . '-' . $fileName . '.' . $explode[1];
+
+		$config['upload_path'] = './assets/berita';
+		$config['allowed_types'] = 'jpg|jpeg|png|pdf';
+		$config['max_size'] = '0';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $newName;
+
+		$this->upload->initialize($config);
+		if (!empty($file)) {
+			if ($this->upload->do_upload($fileName)) {
+				$berkas = $this->upload->data();
+				return $newName;
+			} else {
+				return '';
+			}
+		} else {
+			return '';
+		}
 	}
 
 	public function update_kua($id)
