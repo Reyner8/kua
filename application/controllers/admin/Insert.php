@@ -1,6 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+/*
+Note:
+(semua yang ada dalam folder controller berguna untuk memproses semua perintah baik ke tampilan maupun ke database) 
+pada file controller/admin/insert.php ini berisi semua fungsi yang berguna 
+untuk melakukan penginputan data ke database
+pada fungsi __construct berguna untuk meload library atau model yang diperlukan
+*/
+
 class Insert extends CI_Controller
 {
 
@@ -12,7 +20,7 @@ class Insert extends CI_Controller
 		$this->load->library('form_validation');
 	}
 
-	// input berita
+	// fungsi ini untuk menginput data berita terbaru melalui sisi admin
 	public function insert_news()
 	{
 		// validasi data
@@ -48,7 +56,7 @@ class Insert extends CI_Controller
 		}
 	}
 
-	// input berita
+	// fungsi ini untuk melakukan input data kua melalui sisi admin
 	public function insert_kua()
 	{
 		// validasi data
@@ -79,6 +87,7 @@ class Insert extends CI_Controller
 		}
 	}
 
+	// fungsi ini berguna untuk mengupload gambar yang nantinya di panggil di fungsi insert news
 	private function __uploadFile($fileName)
 	{
 		$file = $_FILES[$fileName]['name'];

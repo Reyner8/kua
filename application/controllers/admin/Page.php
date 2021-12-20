@@ -3,14 +3,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Page extends CI_Controller
 {
-
+	/*
+Note:
+(semua yang ada dalam folder controller berguna untuk memproses semua perintah baik ke tampilan maupun ke database) 
+pada file controller/admin/page.php ini berisi semua fungsi yang berguna 
+untuk menampilkan ke browser
+pada fungsi __construct berguna untuk meload library atau model yang diperlukan
+*/
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('m_admin');
 	}
 
-	// halaman utama 
+	// untuk menampilkan halaman home/dashboard milik admin
 	public function dashboard()
 	{
 		$data = [
@@ -18,10 +24,11 @@ class Page extends CI_Controller
 			'totalRegistration' => count($this->m_admin->get('pernikahan')),
 			'approvedRegistrant' => count($this->m_admin->getWhere('pernikahan', ['approve' => 'approved']))
 		];
+		// meload halaman dari folder view/admin/dashboard.php
 		$this->load->view('admin/dashboard', $data);
 	}
 
-	// halaman pendaftaran
+	// untuk menampilkan halaman pendaftaran milik admin
 	public function registration()
 	{
 		$data = [
@@ -29,9 +36,11 @@ class Page extends CI_Controller
 			'pria' => $this->m_admin->getMempelaiPria(),
 			'wanita' => $this->m_admin->getMempelaiWanita()
 		];
+		// meload halaman dari folder view/admin/registration.php
 		$this->load->view('admin/registration', $data);
 	}
 
+	// untuk menampilkan halaman pendaftaran secara detail dari pendaftar dari sisi admin
 	public function detail_registration($id)
 	{
 		$data = [
@@ -39,12 +48,13 @@ class Page extends CI_Controller
 			'wanita' => $this->m_admin->getMempelaiWanitaRow($id),
 			'berkas' => $this->m_admin->getWhere('berkas', ['id_pernikahan' => $id])
 		];
+		// meload halaman dari folder view/admin/detail_registration.php
 		$this->load->view('admin/detail_registration', $data);
 	}
 
 
 
-	// halaman berita
+	// untuk menampilkan halaman berita dari sisi admin
 	public function news()
 	{
 		$data = [
@@ -52,6 +62,7 @@ class Page extends CI_Controller
 			'data' => $this->m_admin->get('berita'),
 			'editPage' => false
 		];
+		// meload halaman dari folder view/admin/news.php
 		$this->load->view('admin/news', $data);
 	}
 
@@ -64,6 +75,7 @@ class Page extends CI_Controller
 			'edit' => $this->m_admin->getWhereRow('berita', ['id' => $id]),
 			'editPage' => true
 		];
+		// meload halaman dari folder view/admin/news.php
 		$this->load->view('admin/news', $data);
 	}
 
@@ -74,6 +86,7 @@ class Page extends CI_Controller
 			'title' => 'Admin KUA | Survey',
 			'data' => $this->m_admin->get('survey')
 		];
+		// meload halaman dari folder view/admin/survey.php
 		$this->load->view('admin/survey', $data);
 	}
 

@@ -1,6 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+/*
+Note:
+(semua yang ada dalam folder controller berguna untuk memproses semua perintah baik ke tampilan maupun ke database) 
+pada file controller/auth.php ini berisi semua fungsi yang berguna 
+untuk melakukan login,logout dan menampilkan halaman login
+pada fungsi __construct berguna untuk meload library atau model yang diperlukan
+*/
 class Auth extends CI_Controller
 {
 
@@ -10,11 +17,13 @@ class Auth extends CI_Controller
 		$this->load->model('m_admin');
 	}
 
+	// berguna untuk menampilkan halaman login
 	public function index()
 	{
 		$this->load->view('login');
 	}
 
+	// berguna untuk memverifikasi apakah username/password yang di input sudah benar
 	public function login()
 	{
 		$username = $this->input->post('username');
@@ -29,6 +38,7 @@ class Auth extends CI_Controller
 		}
 	}
 
+	// berguna untuk melakukan logout dari sistem
 	public function logout()
 	{
 		$this->session->sess_destroy();

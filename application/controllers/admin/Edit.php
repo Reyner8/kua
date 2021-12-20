@@ -1,13 +1,20 @@
 <?php
+/*
+Note:
+(semua yang ada dalam folder controller berguna untuk memproses semua perintah baik ke tampilan maupun ke database) 
+pada file controller/admin/edit.php ini berisi semua fungsi yang berguna 
+untuk melakukan update data ke database
+pada fungsi __construct berguna untuk meload library atau model yang diperlukan
+*/
 defined('BASEPATH') or exit('No direct script access allowed');
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
+// meload library email agar bisa mengirimkan email
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require 'vendor/autoload.php';
+
 class Edit extends CI_Controller
 {
 
@@ -18,7 +25,7 @@ class Edit extends CI_Controller
 		$this->load->library('upload');
 	}
 
-	// konfirmasi pernikahan
+	// fungsi ini berguna agar admin dapat menyetujui pendaftaran dan juga mengirim email ke pendaftar
 	public function update_registration()
 	{
 		$approve 	= $this->uri->segment(4);
@@ -48,7 +55,7 @@ class Edit extends CI_Controller
 		redirect('admin/page/registration');
 	}
 
-	// laporan pendaftaran
+	// fungsi ini untuk membuat laporan
 	private function laporan_pdf($id)
 	{
 		$this->load->library('pdf');
@@ -96,7 +103,6 @@ class Edit extends CI_Controller
 		$mail->Subject = 'Informasi Pendaftaran';
 		if ($approve == 'approved') {
 			$mail->Body    = 'Data anda sudah disetujui silahkan download file untuk dapat biodata dan informasi waktu pranikah';
-			// Attachments
 			$mail->addAttachment('assets/temp/' . $fileName);
 		} elseif ($approve == 'rejected') {
 			$mail->Body    = 'Data yang anda daftarkan ditolak';
